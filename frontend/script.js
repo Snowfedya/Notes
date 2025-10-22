@@ -22,7 +22,7 @@ async function fetchData() {
 // Fetch folders from the API
 async function fetchFolders() {
     try {
-        const response = await fetch('../backend/api/folders.php');
+        const response = await fetch('/api/folders');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         folders = await response.json();
         renderFolders();
@@ -34,7 +34,7 @@ async function fetchFolders() {
 // Fetch notes from the API
 async function fetchNotes() {
     try {
-        const url = currentFolderId ? `../backend/api/notes.php?folder_id=${currentFolderId}` : '../backend/api/notes.php';
+        const url = currentFolderId ? `/api/notes?folder_id=${currentFolderId}` : '/api/notes';
         const response = await fetch(url);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         notes = await response.json();
@@ -131,14 +131,14 @@ async function saveNote() {
         let response;
         if (currentNoteId) {
             // Update existing note
-            response = await fetch(`../backend/api/notes.php?id=${currentNoteId}`, {
+            response = await fetch(`/api/notes?id=${currentNoteId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(noteData)
             });
         } else {
             // Create new note
-            response = await fetch('../backend/api/notes.php', {
+            response = await fetch('/api/notes', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(noteData)
@@ -159,7 +159,7 @@ async function addFolder() {
     if (!name) return;
 
     try {
-        const response = await fetch('../backend/api/folders.php', {
+        const response = await fetch('/api/folders', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name })
@@ -178,7 +178,7 @@ async function renameFolder(id, currentName) {
     if (!newName || newName.trim() === '') return;
 
     try {
-        const response = await fetch(`../backend/api/folders.php?id=${id}`, {
+        const response = await fetch(`/api/folders?id=${id}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: newName.trim() })
@@ -195,7 +195,7 @@ async function deleteFolder(id) {
     if (!confirm('Are you sure you want to delete this folder? All notes within will be moved to "All Notes".')) return;
 
     try {
-        const response = await fetch(`../backend/api/folders.php?id=${id}`, {
+        const response = await fetch(`/api/folders?id=${id}`, {
             method: 'DELETE'
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -219,7 +219,7 @@ async function deleteNote() {
     if (!currentNoteId) return;
 
     try {
-        const response = await fetch(`../backend/api/notes.php?id=${currentNoteId}`, {
+        const response = await fetch(`/api/notes?id=${currentNoteId}`, {
             method: 'DELETE'
         });
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);

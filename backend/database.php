@@ -12,8 +12,8 @@ $pdo->exec("
       `title` TEXT NOT NULL,
       `content` TEXT NOT NULL,
       `folder_id` INTEGER DEFAULT NULL,
-      `created_at` TEXT NOT NULL DEFAULT (datetime('now')),
-      `updated_at` TEXT NOT NULL DEFAULT (datetime('now')),
+      `created_at` TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+      `updated_at` TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
       `is_pinned` INTEGER NOT NULL DEFAULT 0
     );
 
@@ -40,6 +40,6 @@ $pdo->exec("
       `filename` TEXT NOT NULL,
       `path` TEXT NOT NULL,
       `size` INTEGER NOT NULL,
-      `uploaded_at` TEXT NOT NULL DEFAULT (datetime('now'))
+      `uploaded_at` TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
     );
 ");

@@ -61,7 +61,7 @@ switch ($method) {
         $content = htmlspecialchars($data['content']);
         $folder_id = isset($data['folder_id']) ? filter_var($data['folder_id'], FILTER_VALIDATE_INT) : null;
 
-        $stmt = $pdo->prepare("UPDATE notes SET title = :title, content = :content, folder_id = :folder_id, updated_at = datetime('now') WHERE id = :id");
+        $stmt = $pdo->prepare("UPDATE notes SET title = :title, content = :content, folder_id = :folder_id, updated_at = CURRENT_TIMESTAMP WHERE id = :id");
         $stmt->execute(['title' => $title, 'content' => $content, 'folder_id' => $folder_id, 'id' => $id]);
 
         $stmt = $pdo->prepare("SELECT * FROM notes WHERE id = :id");
