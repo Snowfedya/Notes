@@ -1,0 +1,36 @@
+#-*- mode: git-ignore; -*-
+##
+# A collection of gitignore templates: https://github.com/github/gitignore
+##
+
+# General
+.DS_Store
+.directory
+.svn
+.hg
+.project
+.idea
+.vscode
+*.swp
+*~
+*.orig
+*~
+*.un~
+*.swo
+*.swp
+*.tmp
+*.bak
+
+# Logs
+logs
+*.log
+php_server.log
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# PHP
+vendor/
+composer.lock

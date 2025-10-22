@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegraph-style Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Notes</h1>
+        <div class="main-container">
+            <div class="sidebar">
+                <h2>Folders</h2>
+                <div id="folder-list"></div>
+                <input type="text" id="new-folder-name" placeholder="New folder name">
+                <button id="add-folder">Add Folder</button>
+            </div>
+            <div class="notes-container">
+                <div class="notes-list-header">
+                    <button id="new-note">New Note</button>
+                </div>
+                <div class="notes-list" id="notes-list"></div>
+                <div class="note-editor">
+                    <input type="text" id="note-title" placeholder="Title">
+                    <textarea id="note-content" placeholder="Content"></textarea>
+                    <button id="save-note">Save Note</button>
+                    <button id="delete-note" class="danger">Delete Note</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
