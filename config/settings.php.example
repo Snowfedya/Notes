@@ -1,0 +1,10 @@
+<?php
+
+return [
+    'db' => [
+        'host' => 'localhost',
+        'dbname' => 'focus_db',
+        'user' => 'focus_user',
+        'pass' => 'your_password'
+    ]
+];

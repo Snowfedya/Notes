@@ -21,9 +21,6 @@ $app->addRoutingMiddleware();
 // Add error handling middleware
 $app->addErrorMiddleware(true, true, true);
 
-// Database initialization
-require_once __DIR__ . '/../config/database_init.php';
-
 // Database connection
 $pdo = require __DIR__ . '/../config/database.php';
 

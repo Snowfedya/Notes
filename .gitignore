@@ -4,3 +4,4 @@
 composer.lock
 composer-setup.php
 *.log
+config/settings.php
