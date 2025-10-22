@@ -1,5 +1,5 @@
 /vendor/
-/storage/database/
+/storage/database/focus.db
 /files/
 composer.lock
 composer-setup.php
