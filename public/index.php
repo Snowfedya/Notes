@@ -6,7 +6,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once '../database/database.php';
+require_once '../src/database.php';
 
 $db = get_db_connection();
 $stmt = $db->prepare("SELECT * FROM notes WHERE user_id = :user_id ORDER BY updated_at DESC");

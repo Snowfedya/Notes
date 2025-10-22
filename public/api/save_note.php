@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-require_once '../../database/database.php';
+require_once '../../src/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $note_id = $_POST['note_id'] ?? null;
