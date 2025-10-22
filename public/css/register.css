@@ -1,0 +1,11 @@
+body { display: flex; justify-content: center; align-items: center; height: 100vh; }
+.register-container { background-color: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); width: 300px; }
+h1 { text-align: center; color: #333; }
+form { display: flex; flex-direction: column; }
+label { margin-bottom: 0.5rem; color: #555; }
+input[type="text"], input[type="password"] { padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 1rem; }
+button { padding: 0.75rem; background-color: #28a745; color: #fff; border: none; border-radius: 4px; cursor: pointer; }
+button:hover { background-color: #218838; }
+.error { color: #dc3545; text-align: center; margin-top: 1rem; }
+.success { color: #28a745; text-align: center; margin-top: 1rem; }
+.login-link { text-align: center; margin-top: 1rem; }
