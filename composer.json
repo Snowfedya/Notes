@@ -1,0 +1,17 @@
+{
+    "name": "focus/focus",
+    "description": "A full-featured Evernote web analog",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jules",
+            "email": "jules@example.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
